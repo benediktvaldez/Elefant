@@ -28,7 +28,7 @@ deploy:
     on:
       repo: benediktvaldez/Elefant
       branch: master
- - provider: gcs
+  - provider: gcs
     access_key_id: GOOGZMKOTXLFVL5ERT2T
     secret_access_key:
       secure: g7xClz1yRbc4WSNh/eolp9ec54dk5PGVRpgGqBjFv89mOrRkstL9w2lg1P5hlrswVQx5VE4TWDeZKS4zG6O4n4tbXJQw7HRBdbI9e7yjFbXTt4Oeya7WIHfcncigrMIxlaFr9PUohZSzHEmQnxPO3jQCt8+VP2phe3co1DgkYCCrkjCBXhrL2tTUWxXAufZwmERajoQl3NInM8aa+reUr9CFH6rf90Hvert1V1L2Ht2HKw2Zsc1V09BhhoonKYfdgnmNmTvTQwBXEdtUt/U9FgSS6rwlGQ4ekkIi8Gm8RB8j9sgFVdU4e3UDFv9pV8qmsNscuFZjeHYuChClzKV3Z/gQI2gjSUOLXnjtYrryAvMIXC/JHB9FBe/Z5A7z6H5UChPHsF5gR2q1JX+ZWhX0NQ2ybEhqzZtikm4OnB1Uik1lzYzr9snDmlSM4lxyW4cZ1Yb1a92699l7UVf2tu6zmnYJFg0lXRcjVeqJQtvCQDIyfKREkoq1tuYMxOYAWBxMSqHHfnogL+T5DNQt92hReGbz4MBSJjpPGxUd8LGpaB+xvNhIuO3VYkYNktFIrmV3wXVA+x1sHRdj2ldRq7Id0jzyA2xALCoEGkveR6feC13Rp16zZuzicU7ZGF/9jMg7BmPQdrusjJJy8CUCDT0xZlNs2W3wprW6pCMY4XV0CzU=
