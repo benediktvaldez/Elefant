@@ -1,0 +1,19 @@
+
+.elefant-logo {
+  display: block;
+  width: 130px;
+  height: 130px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+
+  margin: auto;
+}
+
+.elefant-logo.letters {
+  width: 260px;
+}
