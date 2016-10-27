@@ -10,6 +10,9 @@ const BackgroundImages = React.createClass({
     return {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
+      pixelRatio: window.devicePixelRatio || 1,
+      timedout: false,
+      loaded: false,
     }
   },
 
@@ -17,10 +20,16 @@ const BackgroundImages = React.createClass({
     this.setState({
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
+      pixelRatio: window.devicePixelRatio || 1,
     })
   },
 
   componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        timedout: true
+      })
+    }, 1000)
     window.addEventListener('resize', this.handleResize)
   },
 
@@ -40,17 +49,22 @@ const BackgroundImages = React.createClass({
   },
 
   render() {
-    const classNames = cx(['BackgroundImages-wrap', this.state.loaded ? 'loaded' : 'loading'])
+    const classNames = cx(['BackgroundImages-wrap', this.state.loaded && this.state.timedout ? 'loaded' : 'loading'])
+    const windowWidth = this.state.windowWidth * this.state.pixelRatio
+    const windowHeight = this.state.windowHeight * this.state.pixelRatio
+    const quality = (0.9/this.state.pixelRatio) * 100
     return (
       <div className={classNames}>
         {this.props.images.map((image) => {
           return (
             <img
-              src={`//images.contentful.com/${image}?w=${window.innerWidth}&h=${window.innerHeight}&fit=fill`}
-              alt=''
-              key={image}
+              src={`//images.contentful.com/${image}?w=${windowWidth}&h=${windowHeight}&fit=fill&q=${quality}`}
+              width={this.state.windowWidth}
+              height={this.state.windowHeight}
               onLoad={this.handleImageLoaded}
               onError={this.handleImageErrored}
+              key={image}
+              alt=''
             />
           )
         })}
