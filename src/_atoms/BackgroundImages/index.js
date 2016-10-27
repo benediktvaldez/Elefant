@@ -59,8 +59,6 @@ const BackgroundImages = React.createClass({
           return (
             <img
               src={`//images.contentful.com/${image}?w=${windowWidth}&h=${windowHeight}&fit=fill&q=${quality}`}
-              width={this.state.windowWidth}
-              height={this.state.windowHeight}
               onLoad={this.handleImageLoaded}
               onError={this.handleImageErrored}
               key={image}

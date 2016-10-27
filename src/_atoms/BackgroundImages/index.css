@@ -14,7 +14,17 @@
 }
 
 .BackgroundImages-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
   display: block;
+  margin: auto;
+
+  width: 100%;
+  height: auto;
 
   transition: opacity 5000ms cubic-bezier(.35,.6,.03,1);
 }
