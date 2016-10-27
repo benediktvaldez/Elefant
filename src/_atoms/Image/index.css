@@ -1,0 +1,15 @@
+
+img.Image {
+  display: block;
+
+  opacity: 1;
+  transition: opacity 5000ms cubic-bezier(.35,.6,.03,1);
+}
+
+img.Image.loading {
+  opacity: 0;
+}
+
+img.Image.loaded {
+  opacity: 1;
+}

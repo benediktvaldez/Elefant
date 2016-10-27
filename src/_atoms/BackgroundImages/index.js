@@ -3,6 +3,8 @@ const { PropTypes } = React
 
 const cx = require('classnames')
 
+const Image = require('../Image')
+
 require('./index.css')
 
 const BackgroundImages = React.createClass({
@@ -11,8 +13,6 @@ const BackgroundImages = React.createClass({
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
       pixelRatio: window.devicePixelRatio || 1,
-      timedout: false,
-      loaded: false,
     }
   },
 
@@ -25,11 +25,6 @@ const BackgroundImages = React.createClass({
   },
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        timedout: true
-      })
-    }, 1000)
     window.addEventListener('resize', this.handleResize)
   },
 
@@ -37,19 +32,8 @@ const BackgroundImages = React.createClass({
     window.removeEventListener('resize', this.handleResize)
   },
 
-  handleImageLoaded() {
-    this.setState({
-      loaded: true,
-    })
-  },
-  handleImageErrored() {
-    this.setState({
-      loaded: false,
-    })
-  },
-
   render() {
-    const classNames = cx(['BackgroundImages-wrap', this.state.loaded && this.state.timedout ? 'loaded' : 'loading'])
+    const classNames = cx(['BackgroundImages-wrap'])
     const windowWidth = this.state.windowWidth * this.state.pixelRatio
     const windowHeight = this.state.windowHeight * this.state.pixelRatio
     const quality = (0.9/this.state.pixelRatio) * 100
@@ -57,12 +41,10 @@ const BackgroundImages = React.createClass({
       <div className={classNames}>
         {this.props.images.map((image) => {
           return (
-            <img
+            <Image
               src={`//images.contentful.com/${image}?w=${windowWidth}&h=${windowHeight}&fit=fill&q=${quality}`}
-              onLoad={this.handleImageLoaded}
-              onError={this.handleImageErrored}
+              delay={1000}
               key={image}
-              alt=''
             />
           )
         })}

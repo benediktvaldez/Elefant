@@ -25,14 +25,4 @@
 
   width: 100%;
   height: auto;
-
-  transition: opacity 5000ms cubic-bezier(.35,.6,.03,1);
-}
-
-.BackgroundImages-wrap.loading img {
-  opacity: 0;
-}
-
-.BackgroundImages-wrap.loaded img {
-  opacity: 1;
 }
