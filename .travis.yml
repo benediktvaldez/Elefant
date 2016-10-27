@@ -2,12 +2,17 @@ language: node_js
 node_js:
   - '6'
 
+before_install:
+  - time npm i -g yarn --cache-min 999999999
+
 cache:
   directories:
     - node_modules
+    - $HOME/.yarn-cache
+    - $HOME/.npm
 
 install:
-  - npm install --loglevel=warn
+  - time yarn
 
 script:
   - npm run test
