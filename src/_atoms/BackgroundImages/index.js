@@ -1,6 +1,8 @@
 const React = require('react')
 const { PropTypes } = React
 
+const cx = require('classnames')
+
 require('./index.css')
 
 const BackgroundImages = React.createClass({
@@ -26,15 +28,29 @@ const BackgroundImages = React.createClass({
     window.removeEventListener('resize', this.handleResize)
   },
 
+  handleImageLoaded() {
+    this.setState({
+      loaded: true,
+    })
+  },
+  handleImageErrored() {
+    this.setState({
+      loaded: false,
+    })
+  },
+
   render() {
+    const classNames = cx(['BackgroundImages-wrap', this.state.loaded ? 'loaded' : 'loading'])
     return (
-      <div className="BackgroundImages-wrap">
+      <div className={classNames}>
         {this.props.images.map((image) => {
           return (
             <img
               src={`//images.contentful.com/${image}?w=${window.innerWidth}&h=${window.innerHeight}&fit=fill`}
               alt=''
               key={image}
+              onLoad={this.handleImageLoaded}
+              onError={this.handleImageErrored}
             />
           )
         })}

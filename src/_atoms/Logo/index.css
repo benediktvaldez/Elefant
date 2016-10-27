@@ -12,8 +12,15 @@
   z-index: 10;
 
   margin: auto;
+
+  transition: opacity 2000ms cubic-bezier(.35,.6,.03,1);
 }
 
 .elefant-logo.letters {
   width: 260px;
+}
+
+.elefant-logo.hide {
+  opacity: 0;
+  transition-duration: 250ms;
 }
