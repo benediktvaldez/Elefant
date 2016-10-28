@@ -12,13 +12,13 @@ const Index = React.createClass({
     }
   },
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        visible: true,
-      })
-    }, 200)
-  },
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.setState({
+  //       visible: true,
+  //     })
+  //   }, 200)
+  // },
 
   render() {
     const className = cx([
