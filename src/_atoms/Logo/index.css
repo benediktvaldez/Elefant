@@ -1,26 +1,51 @@
 
 .elefant-logo {
   display: block;
-  width: 130px;
+  width: 260px;
   height: 130px;
 
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 20px;
+  left: 20px;
   z-index: 10;
 
   margin: auto;
 
-  transition: opacity 2000ms cubic-bezier(.35,.6,.03,1);
+  transform: translate3d(0, 0, 0);
+
+  transition: top 1000ms cubic-bezier(.35,.6,.03,1), left 1000ms cubic-bezier(.35,.6,.03,1), transform 1000ms cubic-bezier(.35,.6,.03,1), opacity 2000ms cubic-bezier(.35,.6,.03,1);
+  overflow: hidden;
 }
 
 .elefant-logo.letters {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.elefant-logo .backdrop {
+  width: 130px;
+
+  transition: width 1000ms cubic-bezier(.35,.6,.03,1);
+}
+
+.elefant-logo.letters .backdrop {
   width: 260px;
+}
+
+.elefant-logo g.letters path {
+  opacity: 0;
+  transform: translate3d(-50%, 0, 0);
+  transition: transform 1000ms cubic-bezier(.35,.6,.03,1), opacity 250ms ease-in-out;
+}
+
+.elefant-logo.letters g.letters path {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 1000ms cubic-bezier(.35,.6,.03,1), opacity 250ms ease-in-out 250ms;
 }
 
 .elefant-logo.hide {
   opacity: 0;
-  transition-duration: 250ms;
+  transition-duration: 250ms cubic-bezier(.35,.6,.03,1);
 }

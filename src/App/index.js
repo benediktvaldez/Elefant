@@ -15,7 +15,7 @@ const App = () => {
     <BrowserRouter>
       <div className="App">
         <BackgroundImages />
-        <Logo letters={true} />
+        <Match pattern="/" render={({ location }) => <Logo letters={location.pathname === '/' ? true : false} />} />
         <Match exactly pattern="/" component={Index} />
         <Match pattern="/disgraced" component={Disgraced} />
         <Miss component={Error404} />

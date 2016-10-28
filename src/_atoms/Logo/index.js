@@ -3,8 +3,7 @@ const { PropTypes } = React
 const cx = require('classnames')
 
 require('./index.css')
-const logo = require('./logo-elefant.svg')
-const logoLetters = require('./logo-elefant-letters.svg')
+const LogoElefantLetters = require('./logo-elefant-letters.svg')
 
 const Logo = React.createClass({
   getInitialState() {
@@ -22,12 +21,14 @@ const Logo = React.createClass({
   },
 
   render() {
+    const className = cx([
+      'elefant-logo',
+      this.props.fadeIn ? (this.state.visible ? '' : 'hide') : '',
+      this.props.letters ? 'letters' : ''
+    ])
+
     return (
-      <img
-        src={this.props.letters ? logoLetters : logo}
-        className={cx(['elefant-logo', this.props.fadeIn ? (this.state.visible ? '' : 'hide') : '', this.props.letters ? 'letters' : ''])}
-        alt="logo"
-      />
+      <LogoElefantLetters className={className} />
     )
   }
 })
