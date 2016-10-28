@@ -1,2 +1,39 @@
 
 .View.Index {}
+
+.View.Index nav.Navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+
+  margin: auto;
+
+  transform: translate3d(-50%, 100px, 0);
+
+  transition: transform 3000ms ease-out, opacity 2000ms ease-in-out 500ms;
+}
+
+.View.Index nav.Navigation a {
+  font-size: 40px;
+  font-weight: 700;
+  color: #FFF;
+  text-decoration: none;
+
+  opacity: 1;
+  transition: color 150ms, opacity 2500ms cubic-bezier(.35,.6,.03,1);
+}
+
+.View.Index nav.Navigation a:hover {
+  color: #F5A623;
+}
+
+.View.Index nav.Navigation a + a {
+  margin-left: 10px;
+}
+
+.View.Index nav.Navigation.hide {
+  opacity: 0;
+  transform: translate3d(-50%, 80px, 0);
+  transition-duration: 250ms cubic-bezier(.35,.6,.03,1);
+}
