@@ -19,12 +19,14 @@ const Content = ({ location })  => {
 const Disgraced = React.createClass({
   getInitialState() {
     return {
+      loading: true,
       visible: false,
     }
   },
 
   show() {
     this.setState({
+      loading: false,
       visible: true,
     })
   },
@@ -38,7 +40,7 @@ const Disgraced = React.createClass({
   componentDidMount() {
     setTimeout(() => {
       this.show()
-    }, 200)
+    }, 1000)
   },
 
   componentWillReceiveProps(nextProps) {
@@ -49,6 +51,7 @@ const Disgraced = React.createClass({
     const className = cx([
       'View',
       'Disgraced',
+      (this.state.loading ? 'loading' : ''),
       (this.props.location.pathname === '/disgraced' ? 'index' : 'sub'),
     ])
     return (
