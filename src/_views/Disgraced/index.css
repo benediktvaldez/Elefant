@@ -1,2 +1,157 @@
 
 .View.Disgraced {}
+
+.View.Disgraced .titleNav {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  z-index: 19;
+
+  margin: auto;
+
+  transform: translate3d(0, 0, 0);
+
+  transition: transform 1000ms cubic-bezier(.35,.6,.03,1);
+}
+
+.View.Disgraced .titleNav h1 {
+  margin: 0;
+}
+
+.View.Disgraced .titleNav .title {
+  line-height: 160px;
+  font-size: 160px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #F5A623;
+
+  transition: opacity 1000ms cubic-bezier(.35,.6,.03,1);
+}
+
+.View.Disgraced.sub .titleNav {
+  transform: translate3d(-460px, 0, 0);
+}
+.View.Disgraced.sub .titleNav .title {
+  opacity: 0.4;
+}
+
+.View.Disgraced .titleNav nav.SubNavigation {
+  z-index: 20;
+
+  margin: auto;
+  padding: 0 48px 0 0;
+  text-align: right;
+
+  transform: translate3d(0, 0, 0);
+
+  transition: transform 3000ms ease-out, opacity 2000ms ease-in-out 500ms;
+}
+
+.View.Disgraced .titleNav nav.SubNavigation a {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+
+  opacity: 1;
+  transition: color 200ms, opacity 2500ms cubic-bezier(.35,.6,.03,1);
+}
+
+.View.Disgraced .titleNav nav.SubNavigation a.active,
+.View.Disgraced .titleNav nav.SubNavigation a:hover {
+  color: #F5A623;
+}
+
+.View.Disgraced .titleNav nav.SubNavigation a + a {
+  margin-left: 10px;
+}
+
+.View.Disgraced .titleNav nav.SubNavigation.hide {
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(.35,.6,.03,1);
+}
+
+.View.Disgraced .Content {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  margin: auto;
+  padding: 20px;
+  width: 460px;
+
+  color: #ffffff;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  transform: translate3d(100%, 0, 0);
+
+  transition: transform 1000ms cubic-bezier(.35,.6,.03,1);
+}
+
+.View.Disgraced .Content::-webkit-scrollbar {
+  width: 8px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.View.Disgraced .Content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  transition: background 250ms;
+}
+
+.View.Disgraced .Content::-webkit-scrollbar-thumb {
+  background: rgba(245, 166, 35, 0.9);
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 250ms;
+}
+
+.View.Disgraced.sub .Content {
+  transform: translate3d(0, 0, 0);
+}
+
+.View.Disgraced .Content.hide {
+  transform: translate3d(100%, 0, 0);
+}
+
+.View.Disgraced .Content h2 {
+  margin: 0 auto 20px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #F5a623;
+}
+
+.View.Disgraced .Content p {
+  margin: 0 auto 20px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.View.Disgraced .Content a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #F5a623;
+
+  transition: color 200ms;
+}
+
+.View.Disgraced .Content a:hover {
+  font-weight: 700;
+  color: #FFFFFF;
+}
