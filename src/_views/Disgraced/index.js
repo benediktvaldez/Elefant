@@ -36,14 +36,12 @@ const Disgraced = React.createClass({
   },
 
   componentDidMount() {
-    console.log('mount')
     setTimeout(() => {
       this.show()
     }, 200)
   },
 
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillUpdate', nextProps.location.pathname)
     this.hide()
   },
 
