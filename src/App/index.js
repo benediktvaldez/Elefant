@@ -22,7 +22,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="App">
-        <BackgroundImages />
+        <Match pattern="/" component={BackgroundImages} />
         <Match pattern="/" render={({ location }) => <LogoLink />} />
         <Match exactly pattern="/" component={Index} />
         <Match pattern="/disgraced" component={Disgraced} />

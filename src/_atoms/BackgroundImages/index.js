@@ -1,6 +1,5 @@
 const React = require('react')
 const { PropTypes } = React
-const { Match } = require('react-router')
 
 const cx = require('classnames')
 
@@ -37,37 +36,39 @@ const BackgroundImages = React.createClass({
     window.clearInterval(this.updateInterval)
   },
 
+  shouldComponentUpdate(nextProps, nextState) {
+    const isFront = nextProps.location.pathname === '/'
+    const leavingFront = this.props.location.pathname === '/' && nextProps.location.pathname !== '/'
+    return isFront || leavingFront
+  },
+
   pickImage(imageArray, skip) {
     const picked = imageArray._getRandom()
     return picked !== skip ? picked : this.pickImage(imageArray, skip)
   },
 
   render() {
+    const classNames = cx(['BackgroundImages-wrap', (location.pathname === '/' ? 'hide' : 'show')])
+    const windowWidth = this.state.windowWidth * this.state.pixelRatio
+    const windowHeight = this.state.windowHeight * this.state.pixelRatio
+    const quality = (0.9/this.state.pixelRatio) * 100
+
+    this.lastImage = this.currentImage
+    this.currentImage = this.pickImage(this.props.images, this.lastImage)
+
     return (
-      <Match pattern="/" render={({ location }) => {
-        const classNames = cx(['BackgroundImages-wrap', (location.pathname === '/' ? 'hide' : 'show')])
-        const windowWidth = this.state.windowWidth * this.state.pixelRatio
-        const windowHeight = this.state.windowHeight * this.state.pixelRatio
-        const quality = (0.9/this.state.pixelRatio) * 100
-
-        this.lastImage = this.currentImage
-        this.currentImage = this.pickImage(this.props.images, this.lastImage)
-
-        return (
-          <div className={classNames}>
-            {this.props.images.map((image) => {
-              return (
-                <Image
-                  src={`//images.contentful.com/${image}?w=${windowWidth}&h=${windowHeight}&fit=fill&q=${quality}`}
-                  delay={1000}
-                  hide={this.currentImage !== image || location.pathname === '/'}
-                  key={image}
-                />
-              )
-            })}
-          </div>
-        )
-      }} />
+      <div className={classNames}>
+        {this.props.images.map((image) => {
+          return (
+            <Image
+              src={`//images.contentful.com/${image}?w=${windowWidth}&h=${windowHeight}&fit=fill&q=${quality}`}
+              delay={1000}
+              hide={this.currentImage !== image || location.pathname === '/'}
+              key={image}
+            />
+          )
+        })}
+      </div>
     )
   }
 })
