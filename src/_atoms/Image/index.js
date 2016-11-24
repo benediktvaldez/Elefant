@@ -52,7 +52,9 @@ const Image = React.createClass({
     const classNames = cx([
       'Image',
       this.state.error ? 'error' :
-        (this.state.loaded && this.state.timedOut ? 'loaded' : 'loading')
+        (this.props.hide ? 'hide' :
+          (this.state.loaded && this.state.timedOut ? 'loaded' : 'loading')
+        )
     ])
     return (
       <img

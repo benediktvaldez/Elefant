@@ -14,3 +14,8 @@ require('normalize.css');
 // Object.assign() is commonly used with React.
 // It will use the native implementation if it's present and isn't buggy.
 Object.assign = require('object-assign');
+
+// eslint-disable-next-line no-extend-native
+Array.prototype._getRandom = function () {
+  return this[Math.floor(Math.random() * this.length)]
+}

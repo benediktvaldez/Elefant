@@ -8,6 +8,8 @@
   z-index: 20;
 
   margin: auto;
+  width: 260px;
+  text-align: right;
 
   transform: translate3d(-50%, 100px, 0);
 
@@ -17,15 +19,15 @@
 .View.Index nav.Navigation a {
   font-size: 40px;
   font-weight: 700;
-  color: #FFF;
+  color: #F5A623;
   text-decoration: none;
 
   opacity: 1;
-  transition: color 150ms, opacity 2500ms cubic-bezier(.35,.6,.03,1);
+  transition: color 200ms, opacity 2500ms cubic-bezier(.35,.6,.03,1);
 }
 
 .View.Index nav.Navigation a:hover {
-  color: #F5A623;
+  color: #FFFFFF;
 }
 
 .View.Index nav.Navigation a + a {

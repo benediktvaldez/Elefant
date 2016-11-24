@@ -12,13 +12,13 @@ const Index = React.createClass({
     }
   },
 
-  // componentDidMount() {
-  //   setTimeout(() => {
-  //     this.setState({
-  //       visible: true,
-  //     })
-  //   }, 200)
-  // },
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        visible: true,
+      })
+    }, 200)
+  },
 
   render() {
     const className = cx([
@@ -28,7 +28,7 @@ const Index = React.createClass({
     return (
       <div className="View Index">
         <nav className={className}>
-          <Link to="/disgraced">sk&ouml;mm</Link>
+          <Link to="/disgraced">sk&ouml;mm.</Link>
         </nav>
       </div>
     )

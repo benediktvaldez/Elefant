@@ -13,3 +13,10 @@ img.Image.loading {
 img.Image.loaded {
   opacity: 1;
 }
+
+.hide img.Image,
+img.Image.hide {
+  transition-duration: 2000ms;
+  transition-timing-function: ease-out;
+  opacity: 0;
+}

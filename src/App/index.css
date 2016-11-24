@@ -1,8 +1,13 @@
 
 .View {
+  overflow: hidden;
   position: relative;
   z-index: 100;
 
   width: 100vw;
   height: 100vh;
+}
+
+.App {
+  background-color: #252423;
 }
