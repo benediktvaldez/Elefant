@@ -1,0 +1,92 @@
+
+.titleNav {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  z-index: 19;
+
+  margin: auto;
+
+  transform: translate3d(0, 0, 0);
+
+  transition: transform 2500ms cubic-bezier(.35,.6,.03,1);
+}
+
+.titleNav h1 {
+  margin: 0;
+}
+
+.titleNav h1 a,
+.titleNav h1 {
+  line-height: 160px;
+  font-size: 160px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #F5A623;
+
+  transition: opacity 1000ms cubic-bezier(.35,.6,.03,1);
+}
+
+.fp.titleNav h1 a,
+.fp.titleNav h1 {
+  line-height: 100px;
+  font-size: 100px;
+}
+
+.sub.titleNav,
+.sub .titleNav {
+  transform: translate3d(-460px, 0, 0);
+  transition-duration: 1000ms;
+}
+.sub.titleNav h1 a,
+.sub .titleNav h1 a,
+.sub.titleNav h1,
+.sub .titleNav h1 {
+  opacity: 0.4;
+}
+
+.loading.titleNav,
+.loading .titleNav {
+  transform: translate3d(150%, 0, 0);
+}
+
+.titleNav nav.SubNavigation {
+  z-index: 20;
+
+  margin: auto;
+  padding: 0 48px 0 0;
+  text-align: right;
+
+  transform: translate3d(0, 0, 0);
+
+  transition: transform 3000ms ease-out, opacity 2000ms ease-in-out 500ms;
+}
+.fp.titleNav nav.SubNavigation {
+  padding-right: 0;
+}
+
+.titleNav nav.SubNavigation a {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+
+  opacity: 1;
+  transition: color 200ms, opacity 2500ms cubic-bezier(.35,.6,.03,1);
+}
+
+.titleNav nav.SubNavigation a.active,
+.titleNav nav.SubNavigation a:hover {
+  color: #F5A623;
+}
+
+.titleNav nav.SubNavigation a + a {
+  margin-left: 10px;
+}
+
+.titleNav nav.SubNavigation.hide {
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(.35,.6,.03,1);
+}

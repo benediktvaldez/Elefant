@@ -1,7 +1,9 @@
 const React = require('react')
 const { PropTypes } = React
-const { Match, Link } = require('react-router')
+const { Match } = require('react-router')
 const cx = require('classnames')
+
+const TitleNav = require('../../_components/TitleNav')
 
 const src = require('./content')
 require('./index.css')
@@ -54,15 +56,28 @@ const Disgraced = React.createClass({
       (this.state.loading ? 'loading' : ''),
       (this.props.location.pathname === '/disgraced' ? 'index' : 'sub'),
     ])
+    const titleClassName = cx([
+      (this.state.loading ? 'loading' : ''),
+      (this.props.location.pathname === '/disgraced' ? 'index' : 'sub'),
+    ])
+    const navigation = [
+      {
+        route: '/disgraced/about',
+        title: 'um sýninguna',
+      },
+      {
+        route: '/disgraced/group',
+        title: 'hópurinn',
+      },
+    ]
     return (
       <div className={className}>
-        <hgroup className="titleNav">
-          <h1><Link to="/disgraced" className="title">sk&ouml;mm.</Link></h1>
-          <nav className="SubNavigation">
-            <Link to="/disgraced/about" className={location.pathname === '/disgraced/about' ? 'active' : ''}>um sýninguna</Link>
-            <Link to="/disgraced/group" className={location.pathname === '/disgraced/group' ? 'active' : ''}>hópurinn</Link>
-          </nav>
-        </hgroup>
+        <TitleNav
+          className={titleClassName}
+          title="skömm."
+          titleLink="/disgraced"
+          navList={navigation}
+        />
         <section className="Content">
           <Match pattern="/disgraced/about" render={({ location }) => <Content location={location} />} />
           <Match pattern="/disgraced/group" render={({ location }) => <Content location={location} />} />
