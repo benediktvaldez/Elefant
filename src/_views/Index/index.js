@@ -1,46 +1,55 @@
 const React = require('react')
-const { PropTypes } = React
-const { Link } = require('react-router')
 const cx = require('classnames')
+
+const TitleNav = require('../../_components/TitleNav')
 
 require('./index.css')
 
 const Index = React.createClass({
   getInitialState() {
     return {
+      loading: true,
       visible: false,
     }
   },
 
+  show() {
+    this.setState({
+      loading: false,
+      visible: true,
+    })
+  },
+
+  hide() {
+    this.setState({
+      visible: false,
+    })
+  },
+
   componentDidMount() {
     setTimeout(() => {
-      this.setState({
-        visible: true,
-      })
-    }, 200)
+      this.show()
+    }, 1000)
   },
 
   render() {
-    const className = cx([
-      'Navigation',
-      this.props.fadeIn ? (this.state.visible ? '' : 'hide') : ''
+    const titleClassName = cx([
+      'fp',
+      'index',
+      (this.state.loading ? 'loading' : ''),
     ])
+    const projects = [
+      {
+        route: '/disgraced',
+        title: 'skömm.',
+      },
+    ]
     return (
       <div className="View Index">
-        <nav className={className}>
-          <Link to="/disgraced">sk&ouml;mm.</Link>
-        </nav>
+        <TitleNav className={titleClassName} title="verkefnin" navList={projects} />
       </div>
     )
   }
 })
-
-Index.propTypes = {
-  fadeIn: PropTypes.bool,
-}
-
-Index.defaultProps = {
-  fadeIn: true,
-}
 
 module.exports = Index
