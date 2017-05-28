@@ -37,15 +37,22 @@ const Index = React.createClass({
       'fp',
       'index',
       (this.state.loading ? 'loading' : ''),
+      (this.props.location.pathname === '/sman' ? 'loading' : 'index'),
     ])
+    const className = cx([
+      'View',
+      'Index',
+      (this.state.loading ? 'loading' : ''),
+    ])
+
     const projects = [
       {
-        route: '/disgraced',
-        title: 'skömm.',
+        route: '/sman',
+        title: 'SMÁN',
       },
     ]
     return (
-      <div className="View Index">
+      <div className={className}>
         <TitleNav className={titleClassName} title="verkefnin" navList={projects} />
       </div>
     )

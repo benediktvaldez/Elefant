@@ -22,7 +22,8 @@
   font-size: 160px;
   font-weight: 700;
   text-decoration: none;
-  color: #F5A623;
+  color: #aeaeae;
+  /*color: #F5A623;*/
 
   transition: opacity 1000ms cubic-bezier(.35,.6,.03,1);
 }
@@ -48,6 +49,8 @@
 .loading.titleNav,
 .loading .titleNav {
   transform: translate3d(150%, 0, 0);
+  transition-duration: 1000ms;
+  transition-timing-function: ease-out;
 }
 
 .titleNav nav.SubNavigation {

@@ -1,4 +1,4 @@
-@import url("https://overpass-30e2.kxcdn.com/overpass.css");
+@import url('https://fonts.googleapis.com/css?family=Overpass:200,400,700|Roboto+Slab:400,700');
 
 html {
   width: 100vw;
@@ -12,4 +12,8 @@ body {
   height: 100vh;
 
   font-family: 'Overpass', sans-serif;
+
+  .serif {
+    font-family: 'Roboto Slab', serif;
+  }
 }

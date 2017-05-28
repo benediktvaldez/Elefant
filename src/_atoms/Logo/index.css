@@ -5,22 +5,22 @@
   height: 130px;
 
   position: absolute;
-  top: 20px;
   left: 20px;
+  bottom: 20px;
   z-index: 999;
 
   margin: auto;
 
   transform: translate3d(0, 0, 0);
 
-  transition: top 1000ms cubic-bezier(.35,.6,.03,1), left 1000ms cubic-bezier(.35,.6,.03,1), transform 1000ms cubic-bezier(.35,.6,.03,1), opacity 2000ms cubic-bezier(.35,.6,.03,1);
+  transition: bottom 1000ms cubic-bezier(.35,.6,.03,1), left 1000ms cubic-bezier(.35,.6,.03,1), transform 1000ms cubic-bezier(.35,.6,.03,1), opacity 2000ms cubic-bezier(.35,.6,.03,1);
   overflow: hidden;
 }
 
 .elefant-logo.letters {
-  top: 50%;
+  bottom: 50%;
   left: 50%;
-  transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, 50%, 0);
 }
 
 .elefant-logo .backdrop {

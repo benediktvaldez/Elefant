@@ -1,0 +1,173 @@
+
+.View.Sman {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+  transition: opacity 1s, transform 1s ease 1s;
+}
+
+.View.Sman.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 1.5s ease 1s, transform 1s cubic-bezier(.35,.6,.03,1);
+}
+
+.View.Sman ul {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Roboto Slab', serif;
+
+  list-style: none;
+}
+
+.View.Sman ul.actors {
+  top: 20%;
+}
+
+.View.Sman ul.other {
+  bottom: 20%;
+}
+
+.View.Sman ul.frumsynt {
+  bottom: 30%;
+}
+
+.View.Sman ul li {
+  display: block;
+  margin: 0;
+  padding: 0 20px;
+
+  color: #aeaeae;
+  font-size: 1.5vmin;
+  text-transform: uppercase;
+}
+.View.Sman ul li span {
+  display: block;
+  font-weight: 400;
+  text-align: center;
+}
+.View.Sman ul li span:first-child {
+  display: block;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.View.Sman ul.other li,
+.View.Sman ul.frumsynt li,
+.View.Sman ul.actors li.lead {
+  font-size: 1.75vmin;
+}
+
+.View.Sman ul.frumsynt li span + span {
+  font-size: 4vmin;
+}
+
+.View.Sman h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 15vmin;
+  color: #aeaeae;
+
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.View.Sman .Content {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  margin: auto;
+  padding: 20px;
+  width: 460px;
+
+  color: #ffffff;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  transform: translate3d(100%, 0, 0);
+
+  transition: transform 1000ms cubic-bezier(.35,.6,.03,1);
+}
+
+.View.Sman .Content::-webkit-scrollbar {
+  width: 8px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.View.Sman .Content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  transition: background 250ms;
+}
+
+.View.Sman .Content::-webkit-scrollbar-thumb {
+  background: rgba(245, 166, 35, 0.9);
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 250ms;
+}
+
+.View.Sman.sub .Content {
+  transform: translate3d(0, 0, 0);
+}
+
+.View.Sman .Content.hide {
+  transform: translate3d(100%, 0, 0);
+}
+
+.View.Sman .Content h2 {
+  margin: 0 auto 20px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #F5a623;
+}
+
+.View.Sman .Content p {
+  margin: 0 auto 20px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.View.Sman .Content a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #F5a623;
+
+  transition: color 200ms;
+}
+
+.View.Sman .Content a:hover {
+  font-weight: 700;
+  color: #FFFFFF;
+}
